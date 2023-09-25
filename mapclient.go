@@ -36,6 +36,9 @@ func (tx *rpcMAPTransaction) UnmarshalJSON(msg []byte) error {
 	}
 	return json.Unmarshal(msg, &tx.txExtraInfo)
 }
+func (ec *Client) getClient() *rpc.Client {
+	return ec.c
+}
 
 func (ec *Client) getMAPBlock(ctx context.Context, method string, args ...interface{}) (*types.Block, error) {
 	var raw json.RawMessage
