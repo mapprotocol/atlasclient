@@ -36,7 +36,7 @@ func (tx *rpcMAPTransaction) UnmarshalJSON(msg []byte) error {
 	}
 	return json.Unmarshal(msg, &tx.txExtraInfo)
 }
-func (ec *Client) getClient() *rpc.Client {
+func (ec *Client) GetClient() *rpc.Client {
 	return ec.c
 }
 
