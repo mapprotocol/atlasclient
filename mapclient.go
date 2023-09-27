@@ -9,6 +9,7 @@ import (
 
 	"github.com/ethereum/go-ethereum"
 	"github.com/ethereum/go-ethereum/common"
+	"github.com/ethereum/go-ethereum/rpc"
 	"github.com/mapprotocol/atlas/consensus/istanbul/backend"
 	"github.com/mapprotocol/atlas/core/types"
 )
@@ -36,6 +37,7 @@ func (tx *rpcMAPTransaction) UnmarshalJSON(msg []byte) error {
 	}
 	return json.Unmarshal(msg, &tx.txExtraInfo)
 }
+
 func (ec *Client) GetClient() *rpc.Client {
 	return ec.c
 }
